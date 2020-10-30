@@ -47,13 +47,14 @@ export default function CreateOrphanage() {
 
     images.forEach((image) => data.append("images", image));
 
-    const response = await api.post("orphanages", data);
-
-    if (response.status === 201) {
+    try {
+      await api.post("orphanages", data);
       alert("Cadastro realizado com sucesso");
       history.push("/orphanages");
-    } else {
-      alert("Ocorreu algum erro no cadastro");
+    
+    } catch (error) {
+      alert("Ocorreu algum erro no cadastro"); 
+      console.log(error);     
     }
   }
 

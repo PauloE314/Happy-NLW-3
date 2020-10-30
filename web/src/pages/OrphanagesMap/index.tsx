@@ -23,6 +23,7 @@ export default function OrphanagesMap() {
   useEffect(() => {
     api.get("orphanages").then((resp) => {
       setOrphanageList(resp.data);
+      console.log(resp.data)
     });
   }, []);
 

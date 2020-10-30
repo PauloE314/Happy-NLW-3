@@ -21,4 +21,5 @@ app.use(routes);
 app.use(handler);
 
 // Runs server
-app.listen(process.env.PORT, () => console.log("Server Working!"));
+app.listen(process.env.PORT || 3333, () => console.log("Server Working!"));
+console.log(process.env.PORT)
